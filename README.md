@@ -1,50 +1,37 @@
-# 🤖 AI Pre-Exam Screener
+# 🎤 XPay AI Voice Screener
 
-A standalone AI chatbot that screens candidates with 3 technical questions **before** they can enter the exam.
+Fully voice-based AI pre-exam screener.
+- **AI speaks** questions out loud
+- **Candidate answers by voice**
+- AI listens, evaluates, and qualifies or blocks
 
-## ⚡ No installation needed!
+## ⚡ Zero installation
 
-Just:
-1. Download the ZIP from GitHub
-2. Extract it anywhere
-3. Open `index.html` directly in Chrome — **that's it!**
+1. Download ZIP from GitHub
+2. Extract anywhere
+3. Open `index.html` in **Google Chrome**
+4. Allow microphone when asked
 
-No Node.js, no npm, no server needed.
+## 🎯 Flow
 
----
-
-## 🎯 How it works
-
-1. Candidate enters their name
-2. AI asks 3 screening questions one by one (with typing animation)
-3. Candidate types answers
-4. AI evaluates each answer and explains
-5. Score ≥ 2/3 → **🎉 Qualified** → Proceed to Exam button
-6. Score < 2/3 → **😔 Not Qualified** → Try Again button
-
----
-
-## ✏️ Customize questions
-
-Open `index.html` in any text editor and find this section:
-
-```js
-const QUESTIONS = [
-  {
-    question: "Your question here?",
-    keywords: ["answer keyword", "another keyword"],
-    explanation: "Explanation shown after answering."
-  },
-  ...
-];
+```
+Enter Name
+  ↓
+AI speaks: "Hello! I'll ask you 3 questions..."
+AI speaks: "Question 1: What is Binary Search complexity?"
+Candidate clicks mic → speaks answer → mic stops
+AI speaks: "✅ Correct! Binary Search has O(log n)..."
+  ↓ (repeat for all questions)
+Result screen:
+  🎉 Qualified → Proceed to Exam
+  😔 Not Qualified → Try Again
 ```
 
-Change `PASS_MARK` to set how many correct answers are needed (default: 2 out of 3).
+## ✏️ Customize
 
-Change `EXAM_URL` to your exam link (default: `http://localhost:8080`).
+Open `index.html` in Notepad and change:
+- `QUESTIONS` — your questions, keywords, explanations
+- `PASS_MARK` — correct answers needed (default 2/3)
+- `EXAM_URL` — your exam link (default http://localhost:8080)
 
----
-
-## 🔗 Connect to XPay Exam Portal
-
-Set `EXAM_URL = "http://localhost:8080"` inside `index.html` and the **Proceed to Exam** button will redirect there automatically after qualification.
+## ⚠️ Requires Google Chrome + Microphone permission
